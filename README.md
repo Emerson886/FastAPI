@@ -1,8 +1,8 @@
 # FastAPI
 Repository of fastapi backend development(with agent)
-**
 
-**企业知识库智能问答助手（独立开发 · 后端负责人）** ｜ 20XX.XX – 20XX.XX
+
+**企业知识库智能问答助手（独立开发 · 后端负责人）** 
 
 **技术栈**：Python 3.12、FastAPI、SQLAlchemy 2.0、MySQL 8、Pydantic v2、LangChain 1.x + LangGraph、Chroma 向量库、JWT + bcrypt、Loguru、PyMySQL
 
