@@ -1,0 +1,55 @@
+# =============================================================================
+#  后端依赖清单
+# =============================================================================
+# 安装命令（使用你的 conda 环境）：
+#   C:/Users/thunderfish/miniconda3/envs/langchain/python.exe -m pip install -r requirements.txt
+#
+# 你的环境中已安装：fastapi / langchain / langgraph / sqlalchemy / pymysql /
+#                  pydantic / uvicorn / openai / langchain-openai / aiomysql
+# 需要补装的主要是：loguru / langchain-chroma / chromadb / PyJWT / bcrypt /
+#                  pypdf / python-docx / python-multipart
+# =============================================================================
+
+# ---------- Web 框架 ----------
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9        # 文件上传（UploadFile/Form）必需
+
+# ---------- 数据校验与配置 ----------
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+email-validator>=2.1.0         # pydantic 的 EmailStr 依赖它
+
+# ---------- 数据库 ----------
+SQLAlchemy>=2.0.30
+PyMySQL>=1.1.0                 # MySQL 驱动（同步）
+cryptography>=42.0.0           # PyMySQL 使用 caching_sha2_password 认证时需要
+greenlet>=3.0.0                # SQLAlchemy 异步相关依赖（部分场景需要）
+
+# ---------- 认证与安全 ----------
+PyJWT>=2.8.0                   # JWT 令牌签发与校验
+bcrypt>=4.1.0                  # 密码哈希（不依赖 passlib，避免版本兼容坑）
+
+# ---------- 日志 ----------
+loguru>=0.7.2
+
+# ---------- LangChain / Agent ----------
+langchain>=1.0.0
+langchain-core>=1.0.0
+langgraph>=1.0.0               # create_agent 的底层图引擎
+langchain-openai>=1.0.0        # OpenAI 兼容协议的 Chat 与 Embedding 客户端
+
+# ---------- 向量库（RAG） ----------
+langchain-chroma>=0.2.0
+chromadb>=0.5.0
+
+# ---------- 文档解析 ----------
+pypdf>=4.2.0                   # PDF 解析
+python-docx>=1.1.0             # Word (.docx) 解析
+
+# ---------- HTTP 客户端（预留：调用外部 API、写测试脚本用） ----------
+httpx>=0.27.0
+
+# ---------- 可选：数据库迁移（生产环境推荐） ----------
+# alembic>=1.13.0
+# 安装后执行： alembic init migrations  然后按 docs/architecture.md 配置
