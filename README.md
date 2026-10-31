@@ -24,4 +24,3 @@ Repository of fastapi backend development(with agent)
 - 独立交付完整后端系统：6 张业务表、31 个 REST 接口，含接口文档、架构说明、配置指南与部署文档；
 - 安全设计闭环：JWT 双令牌 + SQL 层数据隔离 + 越权防护 + 全量审计 + 日志脱敏；
 - 模型可插拔：切换 DeepSeek / 通义 / Kimi / 智谱 / 本地 vLLM 只需改 3 个配置项，业务代码无需改动；
-- 交付质量：67 个用例 + 3 组启动自检全通过，测试不依赖 MySQL、不留垃圾文件。
